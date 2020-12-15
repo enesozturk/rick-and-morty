@@ -1,4 +1,4 @@
-This project was set up with following [CRA Recipe](https://github.com/atolye15/cra-recipe).
+This project was set up with following [React Single Page App Setup](https://github.com/casemice/developer-guidelines/blob/main/react-spa-setup.md) Guide.
 
 ## Available Scripts
 
