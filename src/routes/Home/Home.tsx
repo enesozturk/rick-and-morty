@@ -26,9 +26,7 @@ const Home: FunctionComponent = () => {
       ) : (
         <>
           <Header />
-          <div className="main">
-            <p>Looks like you want to create something great 🤩</p>
-          </div>
+          <div className="main"></div>
         </>
       )}
     </div>

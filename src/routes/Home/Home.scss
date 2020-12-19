@@ -1,3 +1,13 @@
+.logo {
+  width: calc(var(--big-gap) * 2);
+  height: calc(var(--big-gap) * 2);
+  border-radius: var(--radius);
+}
+
+.titles {
+  margin-left: var(--gap);
+}
+
 .main {
   max-width: var(--main-content);
   margin: 0 auto;

@@ -1,15 +1,12 @@
 .nav {
   z-index: 10;
-  margin: var(--small-gap) auto var(--big-gap) auto;
-  position: sticky;
+  margin: var(--gap) auto;
   padding: var(--gap) 0;
-  top: 0;
   background-color: var(--header-bg);
   backdrop-filter: saturate(180%) blur(20px);
 }
 
 .header {
-  height: 32px;
   margin: 0 auto;
   padding: 0 var(--gap);
   max-width: var(--main-content);
@@ -18,11 +15,11 @@
 }
 
 .logo {
-  width: var(--big-gap);
-  height: var(--big-gap);
+  width: calc(var(--big-gap) * 2);
+  height: calc(var(--big-gap) * 2);
   border-radius: var(--radius);
 }
 
-.title {
+.titles {
   margin-left: var(--gap);
 }
