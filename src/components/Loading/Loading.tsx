@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-type LoadingProps = {};
-
-const Loading: FunctionComponent<LoadingProps> = ({}: LoadingProps) => {
+const Loading: FunctionComponent = () => {
   return <p>Loading...</p>;
 };
 

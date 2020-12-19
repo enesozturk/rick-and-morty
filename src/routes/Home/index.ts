@@ -1,5 +1,6 @@
 import Loadable from 'react-loadable';
 
+// Components
 import Loading from '../../components/Loading';
 
 const LoadableHome = Loadable({
