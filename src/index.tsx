@@ -7,6 +7,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 // Components
 import App from './App';
+import Container from '@material-ui/core/Container';
+import ThemeProvider from '@material-ui/styles/ThemeProvider';
+import { createMuiTheme } from '@material-ui/core';
 
 // Utils
 import store from './store';
@@ -19,10 +22,31 @@ setConfig({
   pureRender: true,
 });
 
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
+});
+
 const Root: FunctionComponent = () => (
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <ThemeProvider theme={theme}>
+        <Container>
+          <App />
+        </Container>
+      </ThemeProvider>
     </Provider>
   </BrowserRouter>
 );
