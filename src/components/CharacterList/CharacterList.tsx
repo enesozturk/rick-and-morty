@@ -5,9 +5,9 @@ import Grid from '@material-ui/core/Grid';
 import CharacterCard from '../CharacterCard';
 
 // Utils & Types
-import { getCharacterList } from '../../utils/Query';
 import { CharacterListProps } from './types';
 import { CharacterProps } from '../CharacterCard';
+import { getCharacterList } from '../../utils/Query';
 
 const CharacterList: FunctionComponent = () => {
   const [characterList, setCharacterList] = React.useState<CharacterListProps | null>(null);

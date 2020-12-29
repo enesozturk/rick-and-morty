@@ -25,3 +25,27 @@ export const getCharacterList = async () => {
   const data = await graphQLClient.request(query);
   return data;
 };
+
+export const getCharacterDetails = async (characterId: number) => {
+  const query = gql`
+    {
+      character(id: ${characterId}) {
+        name
+        status
+        species
+        type
+        gender
+        image
+        episode {
+            id
+            name
+            episode
+        }
+        created
+      }
+    }
+  `;
+
+  const data = await graphQLClient.request(query);
+  return data;
+};

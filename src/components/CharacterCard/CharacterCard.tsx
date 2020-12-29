@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 
 // Utils & Types
 import { CharacterProps } from './types';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
@@ -28,12 +29,17 @@ type CharacterCardProps = {
 };
 
 const CharacterCard = ({ character }: CharacterCardProps) => {
+  const history = useHistory();
   const classes = useStyles();
+
+  const routeToCharacterDetails = () => {
+    history.push(`/character/${character.id}`);
+  };
 
   return (
     <Grid item xs={12} sm={6} md={3}>
       <Card className={classes.root}>
-        <CardActionArea>
+        <CardActionArea onClick={routeToCharacterDetails}>
           <CardMedia
             className={classes.media}
             image={character.image}
