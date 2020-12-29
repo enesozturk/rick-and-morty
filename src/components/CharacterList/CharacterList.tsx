@@ -4,23 +4,28 @@ import React, { FunctionComponent } from 'react';
 import Grid from '@material-ui/core/Grid';
 import CharacterCard from '../CharacterCard';
 
-const List = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-  { id: 8 },
-];
+// Utils & Types
+import { getCharacterList } from '../../utils/Query';
+import { CharacterListProps } from './types';
+import { CharacterProps } from '../CharacterCard';
 
 const CharacterList: FunctionComponent = () => {
+  const [characterList, setCharacterList] = React.useState<CharacterListProps | null>(null);
+
+  React.useEffect(() => {
+    getCharacterList()
+      .then((data) => {
+        setCharacterList(data.characters);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <Grid container spacing={2}>
-      {List.map((item, index) => {
-        return <CharacterCard key={index} />;
-      })}
+      {characterList &&
+        characterList.results.map((item: CharacterProps, index: number) => {
+          return <CharacterCard character={item} key={index} />;
+        })}
     </Grid>
   );
 };
