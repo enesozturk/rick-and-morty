@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 
 // Components
 import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { EpisodeListTab, CharacterDetailsTab } from './TabViews';
 
 // Utils & Types
@@ -50,7 +51,11 @@ const CharacterDetails: FunctionComponent = () => {
         <Tabs tabs={tabs} />
       </Grid>
     </>
-  ) : null;
+  ) : (
+    <Grid container justify="center">
+      <CircularProgress />
+    </Grid>
+  );
 };
 
 export default CharacterDetails;

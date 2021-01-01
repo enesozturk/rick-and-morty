@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 
 // Components
 import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import CharacterCard from '../CharacterCard';
 
 // Utils & Types
@@ -21,11 +22,14 @@ const CharacterList: FunctionComponent = () => {
   }, []);
 
   return (
-    <Grid container spacing={2}>
-      {characterList &&
+    <Grid container spacing={2} justify="center">
+      {characterList ? (
         characterList.results.map((item: CharacterProps, index: number) => {
           return <CharacterCard character={item} key={index} />;
-        })}
+        })
+      ) : (
+        <CircularProgress />
+      )}
     </Grid>
   );
 };
