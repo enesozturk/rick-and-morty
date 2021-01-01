@@ -25,10 +25,10 @@
     width: 64px;
     height: 64px;
     margin: 8px;
-    border: 8px solid var(--casemice);
+    border: 8px solid var(--light-gray);
     border-radius: 50%;
     animation: loading-keyframe 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: var(--casemice) transparent transparent transparent;
+    border-color: var(--light-gray) transparent transparent transparent;
 
     &:nth-child(1) {
       animation-delay: -0.45s;

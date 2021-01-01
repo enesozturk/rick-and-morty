@@ -1,18 +1,14 @@
 import React, { FunctionComponent } from 'react';
 
-// Styles
-import './Loading.scss';
+// Components
+import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Loading: FunctionComponent = () => {
   return (
-    <div className="loading-backdrop">
-      <div className="loading-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+    <Grid container justify="center">
+      <CircularProgress />
+    </Grid>
   );
 };
 
