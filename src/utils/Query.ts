@@ -3,10 +3,10 @@ import { GraphQLClient, gql } from 'graphql-request';
 const endpoint = 'https://rickandmortyapi.com/graphql';
 const graphQLClient = new GraphQLClient(endpoint);
 
-export const getCharacterList = async () => {
+export const getCharacterList = async (page: number) => {
   const query = gql`
     {
-      characters {
+      characters (page: ${page}) {
         info {
           count
           pages
