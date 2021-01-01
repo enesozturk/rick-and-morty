@@ -2,16 +2,16 @@ import React, { FunctionComponent } from 'react';
 
 // Components
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar';
-import EpisodeListTab from './EpisodeListTab';
-import CharacterDetailsTab from './CharacterDetailsTab';
+import { EpisodeListTab, CharacterDetailsTab } from './TabViews';
 
 // Utils & Types
 import { CharacterDetailProps } from './types';
 import { getCharacterDetails } from '../../utils/Query';
 import { useParams } from 'react-router-dom';
 import Tabs from '../../components/Tabs';
+
+import GoBackButton from './GoBackButton';
+import CharacterHeader from './CharacterHeader';
 
 interface RouteParams {
   id: string;
@@ -44,20 +44,8 @@ const CharacterDetails: FunctionComponent = () => {
 
   return characterDetails ? (
     <>
-      <Grid container spacing={4} style={{ marginBottom: 16 }}>
-        <Grid item>
-          <Avatar
-            style={{ width: 120, height: 120 }}
-            alt="Remy Sharp"
-            src={characterDetails.image}
-          />
-        </Grid>
-        <Grid item container direction="column" justify="center" style={{ flex: 1 }}>
-          <Typography variant="h2" gutterBottom>
-            {characterDetails.name}
-          </Typography>
-        </Grid>
-      </Grid>
+      <GoBackButton />
+      <CharacterHeader characterDetails={characterDetails} />
       <Grid container>
         <Tabs tabs={tabs} />
       </Grid>
