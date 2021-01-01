@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 // Components
 import App from './App';
 import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import { createMuiTheme } from '@material-ui/core';
 
@@ -44,7 +45,9 @@ const Root: FunctionComponent = () => (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <Container>
-          <App />
+          <Box p="32px 24px">
+            <App />
+          </Box>
         </Container>
       </ThemeProvider>
     </Provider>
