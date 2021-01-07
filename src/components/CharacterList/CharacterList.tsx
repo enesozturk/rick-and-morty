@@ -34,7 +34,7 @@ const CharacterList: FunctionComponent = () => {
           setFetchLoading(false);
         }, 300);
       })
-      .catch((error) => {
+      .catch(() => {
         setFetchLoading(false);
       });
   };
@@ -57,9 +57,15 @@ const CharacterList: FunctionComponent = () => {
           );
         })
       ) : (
-        <CircularProgress />
+        <div className="character-list-loading">
+          <CircularProgress />
+        </div>
       )}
-      {characterList && fetchLoading && <CircularProgress style={{ marginTop: 16 }} />}
+      {characterList && fetchLoading && (
+        <div className="character-new-list-loading">
+          <CircularProgress style={{ marginTop: 16 }} />
+        </div>
+      )}
     </Grid>
   );
 };

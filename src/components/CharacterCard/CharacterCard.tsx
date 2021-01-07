@@ -28,7 +28,9 @@ type CharacterCardProps = {
   character: CharacterProps;
 };
 
-const CharacterCard = ({ character }: CharacterCardProps) => {
+const CharacterCard: React.FunctionComponent<CharacterCardProps> = ({
+  character,
+}: CharacterCardProps) => {
   const history = useHistory();
   const classes = useStyles();
 
