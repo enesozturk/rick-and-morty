@@ -27,6 +27,4 @@ export const stopLoadingAsync: () => void = () => (dispatch: AppDispatch) => {
   }, 1000);
 };
 
-export const loadingState = (state: LoadingSliceState) => state.loading.isLoading;
-
 export default loadingSlice.reducer;

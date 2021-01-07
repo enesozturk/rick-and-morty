@@ -29,7 +29,7 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-function a11yProps(index: any) {
+function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
@@ -52,10 +52,11 @@ type TabsComponentProps = {
   tabs: TabProps[];
 };
 
-const TabsComp = ({ tabs }: TabsComponentProps) => {
+const TabsComp: React.FunctionComponent<TabsComponentProps> = ({ tabs }: TabsComponentProps) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
+  // eslint-disable-next-line
   const handleChange = (event: any, newValue: number) => {
     setValue(newValue);
   };

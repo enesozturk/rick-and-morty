@@ -28,7 +28,7 @@ const EpisodeListTab: FunctionComponent<EpisodeListTabProps> = ({
     <List aria-label="character-episode-list" style={{ padding: 0 }}>
       {episodeList.map((item, index) => {
         return (
-          <ListItem button>
+          <ListItem key={index} button>
             <ListItemText primary={item.name} secondary={item.episode} />
           </ListItem>
         );

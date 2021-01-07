@@ -1,9 +1,13 @@
 import { GraphQLClient, gql } from 'graphql-request';
+import { CharacterDetailProps } from '../routes/CharacterDetails/types';
+import { CharacterListProps } from '../components/CharacterList/types';
 
 const endpoint = 'https://rickandmortyapi.com/graphql';
 const graphQLClient = new GraphQLClient(endpoint);
 
-export const getCharacterList = async (page: number) => {
+export const getCharacterList = async (
+  page: number,
+): Promise<{ characters: CharacterListProps }> => {
   const query = gql`
     {
       characters (page: ${page}) {
@@ -22,12 +26,14 @@ export const getCharacterList = async (page: number) => {
     }
   `;
 
-  const data = await graphQLClient.request(query);
+  const data = await graphQLClient.request<{ characters: CharacterListProps }>(query);
   return data;
 };
 
-export const getCharacterDetails = async (characterId: number) => {
-  const query = gql`
+export const getCharacterDetails = async (
+  characterId: number,
+): Promise<{ character: CharacterDetailProps }> => {
+  const query: string = gql`
     {
       character(id: ${characterId}) {
         name
@@ -46,6 +52,6 @@ export const getCharacterDetails = async (characterId: number) => {
     }
   `;
 
-  const data = await graphQLClient.request(query);
+  const data = await graphQLClient.request<{ character: CharacterDetailProps }>(query);
   return data;
 };
