@@ -22,7 +22,11 @@ type initialStateProps = {
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Character List', () => {
+describe('CharacterList tests', () => {
+  it('CharacterList renders without crashing', () => {
+    shallow(<CharacterList />);
+  });
+
   it('Displays loading indicator while fetching list', () => {
     const wrapper = shallow(<CharacterList />);
     expect(wrapper.find('.character-list-loading')).toHaveLength(1);
